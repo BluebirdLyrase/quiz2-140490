@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <div class="container">
+        <h1>Products</h1>
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% data.forEach(function(thisdata){  %>
+                <tr>
+                    <td><%= thisdata.ProductID %></td>
+                    <td><%= thisdata.ProductName %></td>
+                    <td><a name="" id="" class="btn btn-primary" href="/products/<%= thisdata.ProductID  %>" role="button">View Details</a></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+
+</html>
